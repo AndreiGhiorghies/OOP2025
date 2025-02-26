@@ -10,7 +10,7 @@ int atoi_custom(char s[100]) {
 	return nr;
 }
 
-void main2() {
+int main() {
 	FILE* file;
 	int suma = 0;
 	char buffer[100];
