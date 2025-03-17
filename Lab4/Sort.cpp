@@ -81,41 +81,41 @@ void Sort::InsertSort(bool ascendent)
 	}
 }
 
-void Sort::Swap(int& a, int& b) {
-	int aux = a;
-	a = b;
-	b = aux;
+void Sort::Swap(const int& i, const int& j) {
+	int aux = this->vector[i];
+	this->vector[i] = this->vector[j];
+	this->vector[j] = aux;
 }
 
-int Sort::Partitie(int vector[], int left, int right, bool ascendent)
+int Sort::Partitie(int left, int right, bool ascendent)
 {
-	int pivot = vector[right];
+	int pivot = this->vector[right];
 	int i = left - 1;
 
 	for(int j = left; j < right; j++)
-		if ((vector[j] < pivot) == ascendent) {
+		if ((this->vector[j] < pivot) == ascendent) {
 			i++;
 
-			Swap(vector[i], vector[j]);
+			Swap(i, j);
 		}
 
-	Swap(vector[i + 1], vector[right]);
+	Swap(i + 1, right);
 	return i + 1;
 }
 
-void Sort::QuickSortHelp(int vector[], int left, int right, bool ascendent)
+void Sort::QuickSortHelp(int left, int right, bool ascendent)
 {
 	if (left < right) {
-		int pivot = Partitie(vector, left, right, ascendent);
+		int pivot = Partitie(left, right, ascendent);
 
-		QuickSortHelp(vector, left, pivot - 1, ascendent);
-		QuickSortHelp(vector, pivot + 1, right, ascendent);
+		QuickSortHelp(left, pivot - 1, ascendent);
+		QuickSortHelp(pivot + 1, right, ascendent);
 	}
 }
 
 void Sort::QuickSort(bool ascendent)
 {
-	QuickSortHelp(this->vector, 0, this->number_of_elements - 1, ascendent);
+	QuickSortHelp(0, this->number_of_elements - 1, ascendent);
 }
 
 

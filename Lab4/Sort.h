@@ -22,8 +22,8 @@ public:
     int  GetElementFromIndex(int index);
 
 private:
-    void Swap(int& a, int& b);
-    void QuickSortHelp(int vector[], int left, int right, bool ascendent = false);
-    int Partitie(int vector[], int left, int right, bool ascendent = false);
+    void Swap(const int& i, const int& j);
+    void QuickSortHelp(int left, int right, bool ascendent = false);
+    int Partitie(int left, int right, bool ascendent = false);
 
 };
