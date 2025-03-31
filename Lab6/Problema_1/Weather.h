@@ -1,6 +1,6 @@
 #pragma once
 
-enum class Weather {
+enum Weather {
 	Rain,
 	Sunny,
 	Show
