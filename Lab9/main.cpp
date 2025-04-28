@@ -2,7 +2,6 @@
 #include <vector>
 #include <map>
 #include <queue>
-#include <stdio.h>
 #include <fstream>
 
 using namespace std;
@@ -68,7 +67,7 @@ int main() {
 		p.push(make_pair(i.first, i.second));
 
 	while (!p.empty()) {
-		printf("%s => %d\n", p.top().first.c_str(), p.top().second);
+		cout << p.top().first << " => " << p.top().second << endl;
 		p.pop();
 	}
 
